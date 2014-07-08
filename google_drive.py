@@ -240,6 +240,7 @@ def upload_large_file(origin_path, file_type, parent_id="root"):
                     oauth_google.refresh_token(token_url, refresh_token,
                                                client_id=client_id,
                                                client_secret=client_secret)
+	    f.close()
 
 
 def _record_file_id(name, fid):
