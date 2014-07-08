@@ -222,7 +222,7 @@ def upload_large_file(origin_path, file_type, parent_id="root"):
             finished = int(status_response.json()['Range'].split("-")[1]) + 1
             remined = file_length - finished
             put_headers.update({'Content-Length': remined,
-                                'Content_Range': str(finished) + "/" + str(file_length)})
+                                'Content-Range': str(finished) + "/" + str(file_length)})
 
             # chop the file
             f = open(origin_path, 'rb')
